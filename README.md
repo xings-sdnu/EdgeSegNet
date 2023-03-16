@@ -115,12 +115,9 @@ Here are the parameters availble for inference:
 
 **Trained Model:**
 
-| Model     | Backbone     | Apple test mIoU | Peach test mIoU | Pretrained Model |
-| :-------- | :----------: |:Large---Medium---Small---: |:-------------------:|:----------------:|
-| EdgeSeg   | ResNet 50    | 99.3%   99.3%     90.5%        | 79%                 | [Dropbox](https://www.dropbox.com/s/7rni1tzyjmdkiup/PSPnet.pth?dl=0) |
 <table>
     <tr> <!-- 第一行数据 -->
-        <th colspan="9">方法比较 </th> <!-- 表头，用于居中显示；合并 9 行为 CBW 数据封包 -->
+        <th colspan="9">Quantitative comparison of different methods - apples </th> <!-- 表头，用于居中显示；合并 9 行为 CBW 数据封包 -->
     </tr>
     <tr> <!-- 第二行数据 -->
         <th rowspan="3"> EdgeSeg </th> <!-- 表头，用于居中显示；合并 2 行为 字节 -->
@@ -146,7 +143,34 @@ Here are the parameters availble for inference:
     <td> 0.98 </td>
     </tr>
 </table>
-
+<table>
+    <tr> <!-- 第一行数据 -->
+        <th colspan="9">Quantitative comparison of different methods - peaches </th> <!-- 表头，用于居中显示；合并 9 行为 CBW 数据封包 -->
+    </tr>
+    <tr> <!-- 第二行数据 -->
+        <th rowspan="3"> EdgeSeg </th> <!-- 表头，用于居中显示；合并 2 行为 字节 -->
+        <th colspan="2"> Large </th>  <!-- 表头，用于居中显示；合并 2 列 -->
+        <th colspan="2"> Medium </th>  <!-- 表头，用于居中显示；合并 2 列 -->
+        <th colspan="2"> Small </th>  <!-- 表头，用于居中显示；合并 2 列 -->
+    </tr>
+    <tr> <!-- 第三行数据 -->
+    <td> mPA </td>
+    <td> MIoU </td>
+    <td> mPA </td>
+    <td> MIoU </td>
+    <td> mPA </td>
+    <td> MIoU </td>
+    </tr>
+  </tr>
+    <tr> <!-- 第四行数据 -->
+    <td> 0.995 </td>
+    <td> 0.995 </td>
+    <td> 0.953 </td>
+    <td> 0.975 </td>
+    <td> 0.855 </td>
+    <td> 0.978 </td>
+    </tr>
+</table>
 
 
 ## Code structure
