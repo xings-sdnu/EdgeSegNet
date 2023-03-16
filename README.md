@@ -3,7 +3,7 @@
 
 <!-- TOC -->
 
-- [Semantic Segmentation in PyTorch](#semantic-segmentation-in-pytorch)
+- [EdgeSeg in PyTorch](#EdgeSeg-in-pytorch)
   - [Requirements](#requirements)
   - [Main Features](#main-features)
     - [Models](#models)
