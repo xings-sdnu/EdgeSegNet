@@ -131,6 +131,10 @@ Here are the parameters availble for inference:
     <tr> <!-- 第三行数据 -->
     <td> mPA </td>
     <td> MIoU </td>
+    <td> mPA </td>
+    <td> MIoU </td>
+    <td> mPA </td>
+    <td> MIoU </td>
     </tr>
   </tr>
     <tr> <!-- 第四行数据 -->
