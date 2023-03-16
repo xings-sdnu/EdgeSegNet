@@ -68,7 +68,7 @@ class Trainer(BaseTrainer):
 
             # LOSS & OPTIMIZE
             self.optimizer.zero_grad()
-            # output, edge = self.model(data)
+            output, edge = self.model(data)
             output = self.model(data)
 
             if self.config['arch']['type'][:3] == 'PSP':
@@ -82,12 +82,12 @@ class Trainer(BaseTrainer):
                 assert output.size()[1] == self.num_classes
                 loss = self.loss(output, target)
             # edge 计算loss
-            # edge_loss = structure_loss(edge, edge_gt)
+            edge_loss = structure_loss(edge, edge_gt)
             if isinstance(self.loss, torch.nn.DataParallel):
                 loss = loss.mean()
-            # total_loss = edge_loss + loss
-            # total_loss.backward()
-            loss.backward()
+            total_loss = edge_loss + loss
+            total_loss.backward()
+            total_loss.backward()
             self.optimizer.step()
             self.total_loss.update(loss.item())
 
