@@ -130,6 +130,11 @@ Here are the parameters availble for inference:
     <td> mPA </td>
     <td> MIoU </td>
     </tr>
+  </tr>
+    <tr> <!-- 第四行数据 -->
+    <td> 0.993 </td>
+    <td> 0.993 </td>
+    </tr>
 </table>
 
 
