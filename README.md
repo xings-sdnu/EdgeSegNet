@@ -115,9 +115,9 @@ Here are the parameters availble for inference:
 
 **Trained Model:**
 
-| Model     | Backbone     | PascalVoc val mIoU | PascalVoc test mIoU | Pretrained Model |
-| :-------- | :----------: |:-----------------: |:-------------------:|:----------------:|
-| PSPNet    | ResNet 50    | 82%                | 79%                 | [Dropbox](https://www.dropbox.com/s/7rni1tzyjmdkiup/PSPnet.pth?dl=0) |
+| Model     | Backbone     | Apple test mIoU | Peach test mIoU | Pretrained Model |
+| :-------- | :----------: |:Large---Medium---Small---: |:-------------------:|:----------------:|
+| EdgeSeg   | ResNet 50    | 99.3%   99.3%     90.5%        | 79%                 | [Dropbox](https://www.dropbox.com/s/7rni1tzyjmdkiup/PSPnet.pth?dl=0) |
 
 
 
