@@ -132,6 +132,7 @@ Here are the parameters availble for inference:
     </tr>
   </tr>
     <tr> <!-- 第四行数据 -->
+    <td> </td>
     <td> 0.993 </td>
     <td> 0.993 </td>
     </tr>
