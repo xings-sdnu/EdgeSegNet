@@ -15,6 +15,7 @@
   - [Inference](#inference)
   - [Code structure](#code-structure)
   - [Config file format](#config-file-format)
+  - [Citation](#citation)
   - [Acknowledgement](#acknowledgement)
 
 <!-- /TOC -->
