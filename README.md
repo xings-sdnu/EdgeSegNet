@@ -118,6 +118,25 @@ Here are the parameters availble for inference:
 | Model     | Backbone     | Apple test mIoU | Peach test mIoU | Pretrained Model |
 | :-------- | :----------: |:Large---Medium---Small---: |:-------------------:|:----------------:|
 | EdgeSeg   | ResNet 50    | 99.3%   99.3%     90.5%        | 79%                 | [Dropbox](https://www.dropbox.com/s/7rni1tzyjmdkiup/PSPnet.pth?dl=0) |
+<table>
+    <tr> <!-- 第一行数据 -->
+        <th colspan="9">CSW 命令状态封包 </th> <!-- 表头，用于居中显示；合并 9 行为 CBW 数据封包 -->
+    </tr>
+    <tr> <!-- 第二行数据 -->
+        <th rowspan="2"> 偏移 </th> <!-- 表头，用于居中显示；合并 2 行为 字节 -->
+        <th colspan="8"> 位 </th>  <!-- 表头，用于居中显示；合并 8 列 -->
+    </tr>
+    <tr> <!-- 第三行数据 -->
+    <td> 7 </td>
+    <td> 6 </td>
+    <td> 5 </td>
+    <td> 4 </td>
+    <td> 3 </td>
+    <td> 2 </td>
+    <td> 1 </td>
+    <td> 0 </td>
+    </tr>
+</table>
 
 
 
