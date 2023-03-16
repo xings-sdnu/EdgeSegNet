@@ -36,18 +36,16 @@ def norm_layer(channel, norm_name='bn'):
         return nn.GroupNorm(min(32, channel // 4), channel)
 
 
-# locating module
-class LM(nn.Module):
+# Multi-scale localization Block
+class MSLB(nn.Module):
     def __init__(self, channel):
-        super(LM, self).__init__()
-        # non-local
+        super(MSLB, self).__init__()
         temp_c = channel // 4
         self.query_conv = nn.Conv2d(in_channels=channel, out_channels=temp_c, kernel_size=1)
         self.key_conv = nn.Conv2d(in_channels=channel, out_channels=temp_c, kernel_size=1)
         self.value_conv = nn.Conv2d(in_channels=channel, out_channels=channel, kernel_size=1)
         self.softmax = nn.Softmax(dim=-1)
 
-        # local
         self.local1 = nn.Sequential(
             nn.Conv2d(channel, channel, 1, bias=False),
             norm_layer(channel),
@@ -114,9 +112,10 @@ class ChannelCompress(nn.Module):
         return self.reduce(x)
 
 
-class GCM(nn.Module):
+# Global Localization Module
+class GLM(nn.Module):
     def __init__(self, in_channel, out_channel):
-        super(GCM, self).__init__()
+        super(GLM, self).__init__()
         self.relu = nn.ReLU(True)
         self.branch0 = nn.Sequential(
             BasicConv2d(in_channel, out_channel, 1),
@@ -141,9 +140,9 @@ class GCM(nn.Module):
         )
         self.conv_cat = BasicConv2d(4 * out_channel, out_channel, 3, padding=1)
         self.conv_res = BasicConv2d(in_channel, out_channel, 1)
-        self.locate1 = LM(256)
-        self.locate2 = LM(256)
-        self.locate3 = LM(256)
+        self.locate1 = MSLB(256)
+        self.locate2 = MSLB(256)
+        self.locate3 = MSLB(256)
         self.compress3 = ChannelCompress(2048, 256)
         self.compress2 = ChannelCompress(1024, 256)
         self.compress1 = ChannelCompress(512, 256)
@@ -166,7 +165,6 @@ class GCM(nn.Module):
         # x2 = self.locate3(x2)
 
         attention_map = torch.sigmoid(self.predict(x2))
-        # 获取边缘图
         edge = torch.abs(F.avg_pool2d(attention_map, kernel_size=3, stride=1, padding=1) - attention_map)
 
         return attention_map, edge
@@ -314,10 +312,10 @@ class RFB(nn.Module):
         return out
 
 
-# Boundary-guided fusion module
-class BFM(nn.Module):
+# Boundary Aware Module
+class BAM(nn.Module):
     def __init__(self, in_c, out_c, groups=8):
-        super(BFM, self).__init__()
+        super(BAM, self).__init__()
         self.rfb = RFB(in_c, out_c)
         self.groups = groups
         sc_channel = (out_c // groups + 1) * groups  # split then concate channel
@@ -386,24 +384,24 @@ class BFM(nn.Module):
 
 
 '''
--> Deeplab V3 +
+-> EdgeSeg
 '''
 
 
-class DeepLab_edge(BaseModel):
+class EdgeSeg(BaseModel):
     def __init__(self, num_classes, in_channels=3, backbone='xception', pretrained=True,
                  output_stride=16, freeze_bn=False, freeze_backbone=False, **_):
 
-        super(DeepLab_edge, self).__init__()
+        super(EdgeSeg, self).__init__()
         assert ('xception' or 'resnet' in backbone)
         if 'resnet' in backbone:
             self.backbone = ResNet(in_channels=in_channels, output_stride=output_stride, pretrained=pretrained)
             low_level_channels = 256
 
         self.decoder = Decoder(low_level_channels, num_classes)
-        self.GCM = GCM(2048, 256)
+        self.GCM = GLM(2048, 256)
         self.cnn = nn.Conv2d(2048, 256, (1, 1))
-        self.refine = BFM(256, 64, 1)
+        self.refine = BAM(256, 64, 1)
 
         if freeze_bn: self.freeze_bn()
         if freeze_backbone:
@@ -426,14 +424,10 @@ class DeepLab_edge(BaseModel):
 
     def get_backbone_params(self):
         return self.backbone.parameters()
+
     def get_decoder_params(self):
         return chain(self.GCM.parameters(), self.decoder.parameters())
 
     def freeze_bn(self):
         for module in self.modules():
             if isinstance(module, nn.BatchNorm2d): module.eval()
-
-
-if __name__ == '__main__':
-    model = DeepLab_edge(2)
-    stat(model, (380, 380))
