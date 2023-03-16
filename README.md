@@ -289,11 +289,11 @@ Config files are in `.json` format:
 # Citation
 Please cite our paper if you find the work useful:<br>
 
-        @Jornal{Xing_COMPAG,
+        @article{Xing_COMPAG,
         author = {Xing Sheng, Chunmeng Kang, Jiye Zheng, Chen Lyu},
         title = {An edge-guided approach to fruit segmentation in complex environments},
-        booktitle = {Computers and Electronics in Agriculture},
-        pages={274--286},
+        journal = {Computers and Electronics in Agriculture},
+        pages={},
         year = {2023}
         }
 
