@@ -136,6 +136,10 @@ Here are the parameters availble for inference:
     <tr> <!-- 第四行数据 -->
     <td> 0.993 </td>
     <td> 0.993 </td>
+    <td> 0.905 </td>
+    <td> 0.959 </td>
+    <td> 0.85 </td>
+    <td> 0.98 </td>
     </tr>
 </table>
 
