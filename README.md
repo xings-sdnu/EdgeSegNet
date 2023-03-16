@@ -124,7 +124,9 @@ Here are the parameters availble for inference:
     </tr>
     <tr> <!-- 第二行数据 -->
         <th rowspan="3"> EdgeSeg </th> <!-- 表头，用于居中显示；合并 2 行为 字节 -->
-        <th colspan="2"> Large </th>  <!-- 表头，用于居中显示；合并 8 列 -->
+        <th colspan="2"> Large </th>  <!-- 表头，用于居中显示；合并 2 列 -->
+        <th colspan="2"> Medium </th>  <!-- 表头，用于居中显示；合并 2 列 -->
+        <th colspan="2"> Small </th>  <!-- 表头，用于居中显示；合并 2 列 -->
     </tr>
     <tr> <!-- 第三行数据 -->
     <td> mPA </td>
