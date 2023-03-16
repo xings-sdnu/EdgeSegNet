@@ -59,7 +59,7 @@ The second step is to augment the dataset using the additionnal annotations prov
 - **COCO Stuff:** For COCO, there is two partitions, CocoStuff10k with only 10k that are used for training the evaluation, note that this dataset is outdated, can be used for small scale testing and training, and can be downloaded [here](https://github.com/nightrome/cocostuff10k). For the official dataset with all of the training 164k examples, it can be downloaded from the official [website](http://cocodataset.org/#download).\
 Note that when using COCO dataset, 164k version is used per default, if 10k is prefered, this needs to be specified with an additionnal parameter `partition = 'CocoStuff164k'` in the config file with the corresponding path.
 
-- **Apple&Peach:** can be downloaded [here](https://pan.baidu.com/s/1RTuFlMwh3PoCj-CzeAhDzg), password:7b8d  
+- **Apple&Peach:** For the dataset which we used in our paper, can be downloaded [here](https://pan.baidu.com/s/1RTuFlMwh3PoCj-CzeAhDzg), password:7b8d  
 
 ### Losses
 In addition to the Cross-Entorpy loss, there is also
