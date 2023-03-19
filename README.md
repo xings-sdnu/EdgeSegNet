@@ -13,6 +13,7 @@
     - [Data augmentation](#data-augmentation)
   - [Training](#training)
   - [Inference](#inference)
+  - [Comparisons](#comparisons)
   - [Code structure](#code-structure)
   - [Config file format](#config-file-format)
   - [Citation](#citation)
@@ -116,7 +117,7 @@ Here are the parameters availble for inference:
 --config       The config file used for training the model.
 ```
 
-**Trained Model:**
+**Comparisons:**
 
 <table>
     <tr> <!-- 第一行数据 -->
