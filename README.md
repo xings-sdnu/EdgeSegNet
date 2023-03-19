@@ -1,9 +1,9 @@
-# EdgeSeg in PyTorch
+# EdgeSegNet in PyTorch
 [![MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/licenses/MIT) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)Pytorch implementation for [An edge-guided method to fruit segmentation in complex environments]()(COMPAG)
 
 <!-- TOC -->
 
-- [EdgeSeg in PyTorch](#EdgeSeg-in-pytorch)
+- [EdgeSegNet in PyTorch](#EdgeSegNet-in-pytorch)
   - [Requirements](#requirements)
   - [Main Features](#main-features)
     - [Models](#models)
