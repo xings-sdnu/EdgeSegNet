@@ -45,7 +45,7 @@ pip install --user -r requirements.txt
 **So, what's available ?**
 
 ### Models 
-- (**EdgeSeg**) An edge-guided method to fruit segmentation in complex environments [[Paper]](https://arxiv.org/abs/1802.02611)
+- (**EdgeSegNet**) An edge-guided method to fruit segmentation in complex environments [[Paper]]()
 
 ### Datasets
 
