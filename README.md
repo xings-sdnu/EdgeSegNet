@@ -117,7 +117,7 @@ Here are the parameters availble for inference:
 --config       The config file used for training the model.
 ```
 
-**Comparisons:**
+## Comparisons
 
 <table>
     <tr> <!-- 第一行数据 -->
