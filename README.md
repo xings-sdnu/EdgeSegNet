@@ -297,8 +297,9 @@ Please cite our paper if you find the work useful:<br>
         title = {An edge-guided approach to fruit segmentation in complex environments},
         journal = {Computers and Electronics in Agriculture},
         volume = {208},
-        pages = {107788}.
-        year = {2023}
+        pages = {107788},
+        year = {2023},
+        doi = {https://doi.org/10.1016/j.compag.2023.107788}.
         }
 
 
