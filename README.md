@@ -296,7 +296,7 @@ Please cite our paper if you find the work useful:<br>
         author = {Xing Sheng, Chunmeng Kang, Jiye Zheng, Chen Lyu},
         title = {An edge-guided approach to fruit segmentation in complex environments},
         journal = {Computers and Electronics in Agriculture},
-        pages={},
+        volume={208},
         year = {2023}
         }
 
