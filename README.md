@@ -299,7 +299,7 @@ Please cite our paper if you find the work useful:<br>
         volume = {208},
         pages = {107788},
         year = {2023},
-        doi = {https://doi.org/10.1016/j.compag.2023.107788}.
+        doi = {doi.org/10.1016/j.compag.2023.107788}.
         }
 
 
